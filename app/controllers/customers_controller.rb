@@ -14,6 +14,7 @@ class CustomersController < ApplicationController
   def create
     @customer = Customer.new(customer_params)
 		if @customer.save
+      flash[:success] = "Customer created"
 			redirect_to @customer
 		else
 			render :new
@@ -21,12 +22,23 @@ class CustomersController < ApplicationController
   end
 
   def edit
+		@customer = Customer.find(params[:id])
   end
 
   def update
+		@customer = Customer.find(params[:id])
+    if @customer.update_attributes(customer_params)
+      flash[:success] = "Customer updated"
+      redirect_to @customer
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+		Customer.find(params[:id]).destroy
+		flash[:success] = "Customer deleted."
+		redirect_to root_path
   end
 	
 	private

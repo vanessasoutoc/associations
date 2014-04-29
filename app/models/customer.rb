@@ -11,6 +11,3 @@ class Customer < ActiveRecord::Base
 	validates_format_of :work_phone, with: /\d{3}-\d{3}-\d{4}/, allow_blank: true
 	validates :email, presence: true, uniqueness: true # add format validation
 end
-
-
-# /\d{3}-\d{3}-\d{4}/
