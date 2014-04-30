@@ -15,5 +15,5 @@ customers = Customer.create([
 	{ name: "Barrack Obama", street: "789 Lilac Circle", city: "Boulder", state: "Colorado", zipcode: "80304", home_phone: "800-555-1212", work_phone: "800-555-3434", email: "Barrack.Obama@example.com" }
 	])
 customers.each do |customer|
-   orders = customer.orders.create( [ { order_date: Time.now }, { order_date: Time.now }, { order_date: Time.now } ] )
+   orders = customer.orders.create( [ { order_name: "First Order", order_date: Time.now }, { order_name: "Second Order", order_date: Time.now }, { order_name: "Third Order", order_date: Time.now } ] )
 end
