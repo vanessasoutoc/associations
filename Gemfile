@@ -6,9 +6,6 @@ gem 'rails', '4.0.2'
 # PostgreSQL
 gem 'pg', '0.15.1'
 
-# Use sqlite3 as the database for Active Record
-#gem 'sqlite3'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -20,6 +17,9 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
+
+# Used by Heroku to serve static assets such as images and stylesheets, and direct production logs to stdout
+gem 'rails_12factor', group: :production
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -49,3 +49,6 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Use sqlite3 as the database for Active Record
+#gem 'sqlite3'
