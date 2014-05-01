@@ -1,4 +1,11 @@
 Associations::Application.routes.draw do
+  get "orders/index"
+  get "orders/show"
+  get "orders/new"
+  get "orders/create"
+  get "orders/edit"
+  get "orders/update"
+  get "orders/delete"
   root  'customers#index'
 
 	resources :customers
