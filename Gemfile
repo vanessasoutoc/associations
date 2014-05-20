@@ -23,6 +23,11 @@ gem 'coffee-rails', '~> 4.0.0'
 # Used by Heroku to serve static assets such as images and stylesheets, and direct production logs to stdout
 gem 'rails_12factor', group: :production
 
+# Testing
+group :development, :test do
+	gem 'rspec-rails', '2.13.1'
+end
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -41,7 +46,7 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', '3.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'
