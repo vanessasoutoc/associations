@@ -1,22 +1,13 @@
 Associations::Application.routes.draw do
-  get "users/index"
-  get "users/show"
-  get "users/new"
-  get "users/create"
-  get "users/update"
-  get "users/edit"
-  get "users/destroy"
-  get "orders/index"
-  get "orders/show"
-  get "orders/new"
-  get "orders/create"
-  get "orders/edit"
-  get "orders/update"
-  get "orders/delete"
   root  'customers#index'
 
 	resources :customers
 	resources :orders
+  resources :users
+
+  StaticPagesController.action_methods.each do |action|
+    get "/#{action}", to: "static_pages##{action}", as: "#{action}_static_page"
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
