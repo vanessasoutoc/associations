@@ -1,0 +1,33 @@
+<%= form_for user, html: {class: "form-horizontal"} do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="user_name">Name</label>
+		<div class="col-md-4">
+			<%= f.text_field :name, class: "form-control" %>
+		</div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="user_email">Email</label>
+		<div class="col-md-4">
+			<%= f.email_field :email, class: "form-control" %>
+		</div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="user_street">Street</label>
+		<div class="col-md-4">
+			<%#= f.text_field :street, class: "form-control" %>
+		</div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="user_city">City</label>
+		<div class="col-md-4">
+			<%#= f.text_field :city, class: "form-control" %>
+		</div>
+  </div>
+
+  <%= f.submit class: "btn btn-default" %>
+	 
+	<%= link_to "Cancel", users_path, class: "btn btn-default" %>
+
+<% end %>
