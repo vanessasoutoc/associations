@@ -2,27 +2,27 @@
   <%= render "shared/error_messages", object: f.object %>
 
   <div class="form-group">
-    <label class="col-md-2 control-label" for="user_name">Name</label>
+    <%= f.label :name, class: "col-md-2 control-label" %>
 		<div class="col-md-4">
 			<%= f.text_field :name, class: "form-control" %>
 		</div>
   </div>
   <div class="form-group">
-    <label class="col-md-2 control-label" for="user_email">Email</label>
+    <%= f.label :email, class: "col-md-2 control-label" %>
 		<div class="col-md-4">
 			<%= f.email_field :email, class: "form-control" %>
 		</div>
   </div>
   <div class="form-group">
-    <label class="col-md-2 control-label" for="user_street">Street</label>
+    <%= f.label :password, class: "col-md-2 control-label" %>
 		<div class="col-md-4">
-			<%#= f.text_field :street, class: "form-control" %>
+			<%= f.text_field :password, class: "form-control" %>
 		</div>
   </div>
   <div class="form-group">
-    <label class="col-md-2 control-label" for="user_city">City</label>
+    <%= f.label :password_confirmation, "Confirmation", class: "col-md-2 control-label" %>
 		<div class="col-md-4">
-			<%#= f.text_field :city, class: "form-control" %>
+			<%= f.text_field :password_confirmation, class: "form-control" %>
 		</div>
   </div>
 
