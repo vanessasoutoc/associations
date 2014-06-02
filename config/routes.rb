@@ -5,6 +5,10 @@ Associations::Application.routes.draw do
 	resources :orders
   resources :users
 
+  StaticPagesController.action_methods.each do |action|
+    get "/#{action}", to: "static_pages##{action}", as: "#{action}_static_page"
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
