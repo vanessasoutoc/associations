@@ -17,7 +17,7 @@ class CustomersController < ApplicationController
       flash[:success] = "Customer created"
 			redirect_to @customer
 		else
-			render :new
+			render "new"
 		end
   end
 
@@ -31,7 +31,7 @@ class CustomersController < ApplicationController
       flash[:success] = "Customer updated"
       redirect_to @customer
     else
-      render 'edit'
+      render "edit"
     end
   end
 
