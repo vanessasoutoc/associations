@@ -1,13 +1,23 @@
 Associations::Application.routes.draw do
-  root  'customers#index'
+  root  'sessions#new'
 
 	resources :customers
 	resources :orders
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
-  StaticPagesController.action_methods.each do |action|
-    get "/#{action}", to: "static_pages##{action}", as: "#{action}_static_page"
-  end
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
+
+  match '/contact', to: 'static_pages#contact', via: 'get'  
+  match '/about',   to: 'static_pages#about',   via: 'get'  
+
+  # NOTE: This block began causing an error after I added code to the 'SessionsHelper' module
+  # and included it in 'ApplicationController'
+
+  #StaticPagesController.action_methods.each do |action|
+  #  get "/#{action}", to: "static_pages##{action}", as: "#{action}_static_page"
+  #end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

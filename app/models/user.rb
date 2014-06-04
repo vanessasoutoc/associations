@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 	# Callbacks
 	before_save { self.email = email.downcase }
+	before_create :create_remember_token
 
 	# Validations
 	validates :name, presence: true, length: { maximum: 50 }
@@ -10,4 +11,17 @@ class User < ActiveRecord::Base
 					  uniqueness: { case_sensitive: false }
 	has_secure_password
 	validates :password, length: { minimum: 6 }, on: :create
+
+	def User.new_persistent_session_token
+		SecureRandom.urlsafe_base64
+	end
+
+	def User.digest(token)
+		Digest::SHA1.hexdigest(token.to_s)
+	end
+
+	private
+		def create_persistent_session_token
+			self.persistent_session_token = User.digest(User.new_persistent_session_token)
+		end
 end
