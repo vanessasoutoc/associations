@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def signed_in_user
 		unless signed_in?
-		  flash[:warning] = "Please sign in."
+		  flash[:warning] = "You must be signed in to access the requested option."
 		  redirect_to signin_url
 		end
   end

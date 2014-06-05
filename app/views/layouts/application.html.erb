@@ -32,7 +32,9 @@
             	<%= link_to "Users", users_path %>
             </li>
           <% end %>
+        </ul>
 
+        <ul class="nav navbar-nav navbar-right">
           <li class="<%= 'active' if params[:controller] == 'static_pages' && params[:action] == 'about' %>">
           	<%= link_to "About", about_path %>
           </li>
@@ -43,6 +45,10 @@
           <% if signed_in? %>
             <li class="<%= 'active' if params[:controller] == 'sessions' && params[:action] == 'destroy' %>">
               <%= link_to "Sign Out", signout_path, method: :delete %>
+            </li>
+          <% else %>
+            <li class="<%= 'active' if params[:controller] == 'sessions' && params[:action] == 'new' %>">
+              <%= link_to "Sign In", signin_path %>
             </li>
           <% end %>
         </ul>
