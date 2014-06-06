@@ -1,11 +1,18 @@
-<h1>About</h1>
+<h1>Associations App</h1>
 <p>This application was developed as an opportunity to practice various aspects of Ruby on Rails programming.</p>
 <p>Functionality currently implemented:</p>
 <ul class="list-unstyled icon-list chevron-right">
 	<li>Bootstrap UI</li>
 	<li>PostgreSQL database</li>
 	<li>Authentication</li>
-	<li>Authorization</li>
+	<li>Authorization - User CRUD only accessible by Admin</li>
 	<li>User CRUD functionality</li>
 	<li>Customer CRUD functionality</li>
 </ul>
+<p>
+  <% if signed_in? %>
+  	<h3>Please select a menu option above.</h3>
+  <% else %>
+      <%= link_to "Sign In", signin_path, class: "btn btn-default"  %>
+  <% end %>
+</p>

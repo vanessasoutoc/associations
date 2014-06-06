@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :signed_in_user
+  before_action :admin_user
   def index
     @users = User.all
   end
@@ -38,7 +39,7 @@ class UsersController < ApplicationController
 
   def destroy
     if current_user.id == params[:id].to_i
-      flash[:danger] = "You cannot delete currently signed in user."
+      flash[:danger] = "You cannot delete signed in user."
       redirect_to users_path
     else
       User.find(params[:id]).destroy
@@ -49,6 +50,15 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      if current_user && current_user.admin?
+        params.require(:user).permit(:name, :email, :password, :password_confirmation, :admin)
+      end
+    end
+
+    def admin_user
+      unless current_user.admin?
+        flash[:warning] = "You must be an admin to access the requested option."
+        redirect_to root_url
+      end
     end
 end

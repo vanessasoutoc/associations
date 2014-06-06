@@ -1,5 +1,5 @@
 Associations::Application.routes.draw do
-  root  'sessions#new'
+  root  'static_pages#about'
 
 	resources :customers
 	resources :orders

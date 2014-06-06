@@ -40,7 +40,7 @@ class CustomersController < ApplicationController
   def destroy
 		Customer.find(params[:id]).destroy
 		flash[:success] = "Customer deleted."
-		redirect_to root_path
+		redirect_to customers_path
   end
 	
 	private
