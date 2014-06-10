@@ -1,4 +1,28 @@
-<h1>Show Customer Order</h1>
-<p>Under construction.</p>
+<div class="row">
+	<div>
+		<h1>Order</h1>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6">
+		<table class="table table-bordered">
+			<tr>
+				<td class="field-label col-md-2 active text-right"><label>NAME:</label></td>
+				<td class="col-md-4"><%= @order.name %></td>
+			</tr>
+			<tr>
+				<td class="field-label col-md-2 active text-right"><label>DATE:</label></td>
+				<td class="col-md-4"><%= @order.date %></td>
+			</tr>
+			<tr>
+				<td class="field-label col-md-2 active text-right"><label>TOTAL:</label></td>
+				<td class="col-md-4"><%= @order.total %></td>
+			</tr>
+		</table>
+	</div>
+</div>	<!-- .row -->
  
-<%= link_to "Back to Customer", :back, class: "btn btn-default" %>
+<br>
+ 
+<%= link_to "Edit", edit_order_path(@order), class: "btn btn-default" %> 
+<%= link_to "Back to Customer List", customers_path, class: "btn btn-default" %>

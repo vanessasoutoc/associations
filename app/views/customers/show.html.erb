@@ -55,8 +55,8 @@
  
 		<% @customer.orders.each do |order| %>
 			<tr>
-				<td><%= order.order_name %></td>
-				<td><%= order.order_date %></td>
+				<td><%= order.name %></td>
+				<td><%= order.date.to_date %></td>
 				<td><%= link_to "Show", order %></td>
 				<td><%= link_to "Edit", edit_order_path(order) %></td>
 				<td><%= link_to_if false, "Delete", order, method: :delete, data: { confirm: "Delete this order?" } %></td>
