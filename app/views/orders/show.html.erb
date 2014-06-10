@@ -12,11 +12,11 @@
 			</tr>
 			<tr>
 				<td class="field-label col-md-2 active text-right"><label>DATE:</label></td>
-				<td class="col-md-4"><%= @order.date %></td>
+				<td class="col-md-4"><%= @order.date.to_date %></td>
 			</tr>
 			<tr>
 				<td class="field-label col-md-2 active text-right"><label>TOTAL:</label></td>
-				<td class="col-md-4"><%= @order.total %></td>
+				<td class="col-md-4"><%= number_to_currency(@order.total, unit: "") %></td>
 			</tr>
 		</table>
 	</div>
@@ -25,4 +25,4 @@
 <br>
  
 <%= link_to "Edit", edit_order_path(@order), class: "btn btn-default" %> 
-<%= link_to "Back to Customer List", customers_path, class: "btn btn-default" %>
+<%= link_to "Back to Customer", customer_path(@order.customer_id), class: "btn btn-default" %>

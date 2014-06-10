@@ -2,49 +2,49 @@
   <%= render "shared/error_messages", object: f.object %>
 
   <div class="form-group">
-    <label class="col-md-2 control-label" for="customer_name">Name</label>
+    <label class="col-md-2 control-label" for="customer_name">NAME</label>
 		<div class="col-md-4">
 			<%= f.text_field :name, class: "form-control" %>
 		</div>
   </div>
   <div class="form-group">
-    <label class="col-md-2 control-label" for="customer_street">Street</label>
+    <label class="col-md-2 control-label" for="customer_street">STREET</label>
 		<div class="col-md-4">
 			<%= f.text_field :street, class: "form-control" %>
 		</div>
   </div>
   <div class="form-group">
-    <label class="col-md-2 control-label" for="customer_city">City</label>
+    <label class="col-md-2 control-label" for="customer_city">CITY</label>
 		<div class="col-md-4">
 			<%= f.text_field :city, class: "form-control" %>
 		</div>
   </div>
   <div class="form-group">
-    <label class="col-md-2 control-label" for="customer_state">State</label>
+    <label class="col-md-2 control-label" for="customer_state">STATE</label>
 		<div class="col-md-4">
 			<%= f.select :state, options_for_select(us_states, customer[:state]), {}, class: "form-control" %>
 		</div>
   </div>
   <div class="form-group">
-    <label class="col-md-2 control-label" for="customer_zipcode">Zip Code</label>
+    <label class="col-md-2 control-label" for="customer_zipcode">ZIP CODE</label>
 		<div class="col-md-4">
 			<%= f.text_field :zipcode, class: "form-control", placeholder: "#####" %>
 		</div>
   </div>
   <div class="form-group">
-    <label class="col-md-2 control-label" for="customer_home_phone">Home Phone</label>
+    <label class="col-md-2 control-label" for="customer_home_phone">HOME PHONE</label>
 		<div class="col-md-4">
 			<%= f.telephone_field :home_phone, class: "form-control", placeholder: "###-###-####" %>
 		</div>
   </div>
   <div class="form-group">
-    <label class="col-md-2 control-label" for="customer_work_phone">Work Phone</label>
+    <label class="col-md-2 control-label" for="customer_work_phone">WORK PHONE</label>
 		<div class="col-md-4">
 			<%= f.telephone_field :work_phone, class: "form-control", placeholder: "###-###-####" %>
 		</div>
   </div>
   <div class="form-group">
-    <label class="col-md-2 control-label" for="customer_email">Email</label>
+    <label class="col-md-2 control-label" for="customer_email">EMAIL</label>
 		<div class="col-md-4">
 			<%= f.email_field :email, class: "form-control" %>
 		</div>
