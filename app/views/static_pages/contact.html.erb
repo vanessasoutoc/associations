@@ -1,4 +1,17 @@
-<h1>Contact</h1>
-<p>Tim Coveney</p>
-<p><%= link_to "tcemp@comcast.net", "mailto:tcemp@comcast.net" %></p>
-<p><%= link_to "Application GitHub Repository", "https://github.com/UniquelySimilar/associations", target: "_blank" %></p>
+<h2>Developer Information</h2>
+<div class="media">
+
+	<%= link_to("https://github.com/UniquelySimilar", class: "pull-left") do %>
+	  <%= image_tag("tim_cubicle.jpg", alt: "Tim Coveney", class: "media-object") %>
+	<% end %>
+
+	<div class="media-body">
+		<ul class="list-unstyled">
+			<li class="media-heading">Tim Coveney</li>
+			<li><%= link_to "tcemp@comcast.net", "mailto:tcemp@comcast.net" %></li>
+			<li>
+				<%= link_to "Application GitHub Repository", "https://github.com/UniquelySimilar/associations", target: "_blank" %>
+			</li>
+		</ul>
+	</div>
+</div>
