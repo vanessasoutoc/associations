@@ -15,7 +15,7 @@
   <tr>
     <td><%= customer.name %></td>
     <td><%= customer.email %></td>
-    <td><%= link_to "Show", customer %></td>
+    <td><%= link_to "Show detail with orders", customer %></td>
     <td><%= link_to "Edit", edit_customer_path(customer) %></td>
     <td><%= link_to "Delete", customer, method: :delete, data: { confirm: "Delete this customer?" } %></td>
   </tr>
