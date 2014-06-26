@@ -25,6 +25,6 @@
 
   <%#= f.submit class: "btn btn-default" %>
 	 
-	<%= link_to "Cancel", customers_path, class: "btn btn-default" %>
+	<%= link_to "Back to Customer", customer_path(@order.customer_id), class: "btn btn-default" %>
 
 <% end %>
