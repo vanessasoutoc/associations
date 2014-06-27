@@ -12,7 +12,7 @@
 			</tr>
 			<tr>
 				<td class="field-label col-md-2 active text-right"><label>DATE:</label></td>
-				<td class="col-md-4"><%= @order.date.to_date %></td>
+				<td class="col-md-4"><%= @order.date.strftime("%-m/%-d/%Y") %></td>
 			</tr>
 			<tr>
 				<td class="field-label col-md-2 active text-right"><label>TOTAL:</label></td>
