@@ -11,13 +11,13 @@
   <div class="form-group">
     <%= f.label :date, "DATE", class: "col-md-2 control-label" %>
 		<div class="col-md-4">
-			<%= f.text_field :date, class: "form-control" %>
+			<%= f.text_field :date, id: "datepicker", class: "form-control", value: @order.date.strftime("%-m/%-d/%Y") %>
 		</div>
   </div>
   <div class="form-group">
     <%= f.label :total, "TOTAL", class: "col-md-2 control-label" %>
 		<div class="col-md-4">
-			<%= f.text_field :total, class: "form-control datepicker" %>
+			<%= f.text_field :total, class: "form-control" %>
 		</div>
   </div>
 
