@@ -1,8 +1,9 @@
 Associations::Application.routes.draw do
   root  'static_pages#about'
 
-	resources :customers
-	resources :orders
+	resources :customers do
+		resources :orders, shallow: true
+	end
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
