@@ -14,6 +14,7 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap/dropdown
+//= require jquery-tablesorter
 //= require jquery.ui.datepicker
 //= require turbolinks
 //= require_tree .

@@ -37,6 +37,9 @@ gem 'jquery-rails'
 # Use jqueryUI
 gem 'jquery-ui-rails'
 
+# Use jquery-tablesorter
+gem 'jquery-tablesorter'
+
 # Use jquery Turbolinks so that '$(document).ready()'' will still be called on every page when using Turbolinks
 gem 'jquery-turbolinks'
 

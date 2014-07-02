@@ -2,22 +2,26 @@
 <%= link_to "Add Customer", new_customer_path, class: "btn btn-default valign_middle" %>
 <br />
 <br />
-<table class="table table-striped table-bordered">
-  <tr class="head-row">
-    <th>NAME</th>
-    <th>EMAIL</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
- 
-<% @customers.each do |customer| %>
-  <tr>
-    <td><%= customer.name %></td>
-    <td><%= customer.email %></td>
-    <td><%= link_to "Show detail with orders", customer %></td>
-    <td><%= link_to "Edit", edit_customer_path(customer) %></td>
-    <td><%= link_to "Delete", customer, method: :delete, data: { confirm: "Delete this customer?" } %></td>
-  </tr>
-<% end %>
+<table id="customer-index-table" class="table table-striped table-bordered">
+	<thead>
+	  <tr class="head-row">
+	    <th>NAME</th>
+	    <th>EMAIL</th>
+	    <th class="sorter-false"></th>
+	    <th class="sorter-false"></th>
+	    <th class="sorter-false"></th>
+	  </tr>
+	</thead>
+
+	<tbody>
+	<% @customers.each do |customer| %>
+	  <tr>
+	    <td><%= customer.name %></td>
+	    <td><%= customer.email %></td>
+	    <td><%= link_to "Detail with associated Orders", customer %></td>
+	    <td><%= link_to "Edit", edit_customer_path(customer) %></td>
+	    <td><%= link_to "Delete", customer, method: :delete, data: { confirm: "Delete this customer?" } %></td>
+	  </tr>
+	<% end %>
+	</tbody>
 </table>
