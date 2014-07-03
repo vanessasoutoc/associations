@@ -9,3 +9,5 @@ Functionality currently implemented:
 * Authorization - User management only accessible by Admin role
 * PostgreSQL database
 * Bootstrap UI
+*	jQuery 'tablesorter' on Index views
+*	jQuery 'datepicker' on Order Add and Edit Views
