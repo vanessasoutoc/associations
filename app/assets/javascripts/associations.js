@@ -4,8 +4,15 @@ $(document).ready(function() {
 	
 	$("#customer-index-table").tablesorter({
 		theme: 'bootstrap',
-		headerTemplate: '{content}{icon}',
+		initWidgets: true,
 		widgets: ['uitheme'],
-		sortList: [[0,0]]
+		widgetOptions: { uitheme: 'bootstrap' },
+		headerTemplate: '{content}{icon}',
+		sortList: [[0,0]],	// Default ascending sort on 'NAME' column
+	    headers: {	// Disable sort on 'Detail', 'Edit' and 'Delete; columns
+	        2: { sorter: false },
+	        3: { sorter: false },
+	        4: { sorter: false }
+	    }
 	 });
 })
