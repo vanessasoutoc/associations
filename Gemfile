@@ -35,7 +35,7 @@ end
 gem 'jquery-rails'
 
 # Use jqueryUI
-gem 'jquery-ui-rails'
+gem 'jquery-ui-rails', '4.2.1'
 
 # Use jquery-tablesorter
 gem 'jquery-tablesorter'
