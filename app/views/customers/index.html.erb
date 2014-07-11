@@ -20,7 +20,8 @@
 	    <td><%= customer.email %></td>
 	    <td><%= link_to "Detail with associated Orders", customer %></td>
 	    <td><%= link_to "Edit", edit_customer_path(customer) %></td>
-	    <td><%= link_to "Delete", customer, method: :delete, data: { confirm: "Delete this customer?" } %></td>
+	    <td><%= link_to "Delete", customer, method: :delete,
+	    	data: { confirm: "Delete this customer and associated orders?" } %></td>
 	  </tr>
 	<% end %>
 	</tbody>

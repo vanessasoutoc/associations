@@ -44,7 +44,7 @@
 		<table id="order-index-table" class="tablesorter">
 			<thead>
 				<tr>
-					<th>NAME</th>
+					<th>DESCRIPTION</th>
 					<th>DATE</th>
 					<th></th>
 					<th></th>
@@ -54,7 +54,7 @@
 			<tbody>
 			<% @customer.orders.each do |order| %>
 				<tr>
-					<td><%= order.name %></td>
+					<td><%= order.description %></td>
 					<td><%= order.date.strftime("%-m/%-d/%Y") %></td>
 					<td><%= link_to "Show", order %></td>
 					<td><%= link_to "Edit", edit_order_path(order) %></td>

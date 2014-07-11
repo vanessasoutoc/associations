@@ -53,7 +53,7 @@ class OrdersController < ApplicationController
 			unless params[:order][:date].blank?
 				params[:order][:date] = DateTime.strptime(params[:order][:date], "%m/%d/%Y").strftime("%Y-%m-%d")
 			end
-			params.require(:order).permit(:name, :date, :total)
+			params.require(:order).permit(:description, :date, :total)
 		end
 
 end
