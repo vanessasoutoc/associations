@@ -5,6 +5,7 @@ Associations::Application.routes.draw do
 		resources :orders, shallow: true
 	end
   resources :users
+  resources :products
   resources :sessions, only: [:new, :create, :destroy]
 
   match '/signin',  to: 'sessions#new',         via: 'get'
