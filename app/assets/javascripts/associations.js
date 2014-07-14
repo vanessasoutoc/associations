@@ -43,4 +43,20 @@ $(document).ready(function() {
 	        4: { sorter: false }
 	    }
 	 });
+	
+	$("#product-index-table").tablesorter({
+		theme: 'bootstrap',
+		initWidgets: true,
+		widgets: ['uitheme'],
+		widgetOptions: { uitheme: 'bootstrap' },
+		headerTemplate: '{content}{icon}',
+		sortList: [[0,0]],	// Default ascending sort on 'NAME' column
+	    headers: {	// Disable sort on 'Show', 'Edit' and 'Delete' columns
+	        1: { sorter: false },
+	        4: { sorter: false },
+	        5: { sorter: false },
+	        6: { sorter: false },
+	        7: { sorter: false }
+	    }
+	 });
 })
