@@ -1,4 +1,6 @@
 class Product < ActiveRecord::Base
+	has_and_belongs_to_many :orders
+
 	# Validations
 	validates :name, presence: true, length: { maximum: 30 }
 	validates :description, length: { maximum: 255 }
