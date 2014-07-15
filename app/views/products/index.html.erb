@@ -25,9 +25,9 @@
 	    <td><%= number_to_currency(product.unit_price, unit: "") %></td>
 	    <td><%= product.inventory_qty %></td>
 	    <td><%= link_to "Detail", product %></td>
-	    <td><%#= link_to "Edit", edit_product_path(product) %></td>
-	    <td><%#= link_to "Delete", product, method: :delete,
-	    	data: { confirm: "Delete this product and order items?" } %></td>
+	    <td><%= link_to "Edit", edit_product_path(product) %></td>
+	    <td><%= link_to "Delete", product, method: :delete,
+	    	data: { confirm: "Delete this product and associated order items?" } %></td>
 	  </tr>
 	<% end %>
 	</tbody>
