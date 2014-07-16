@@ -17,7 +17,15 @@ class OrdersController < ApplicationController
   	@customer = Customer.find(params[:customer_id])
     @order = Order.new(order_params)
     @order.customer_id = params[:customer_id]
+    # TODO: Save line items
+    # Temporary to avoid error
 		if @order.save
+    # Temporary to avoid error
+#			product = Product.find(id: 1)
+#			@order.products << product
+	    line_item = LineItem.create(order_id: @order.id, product_id: 1)
+	    @order.line_items << line_item
+
       flash[:success] = "Order created"
 			redirect_to @order
 		else
