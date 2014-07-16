@@ -41,12 +41,14 @@
 	</thead>
 
 	<tbody>
-	<% @order.line_items.each do |line_item| %>
+	<%
+		@order.line_items.each do |line_item|
+	%>
 	  <tr>
 	    <td><%= line_item.product.name %></td>
 	    <td><%= line_item.product.upc %></td>
 	    <td><%= line_item.quantity %></td>
-	    <td><%= number_to_currency(line_item.product.unit_price * line_item.quantity * (1 - (line_item.discount_percent / 100)), unit: "") %></td>
+	    <td><%= number_to_currency(line_item.price, unit: "") %></td>
 	  </tr>
 	<% end %>
 	</tbody>
