@@ -59,4 +59,13 @@ $(document).ready(function() {
 	        7: { sorter: false }
 	    }
 	 });
+	
+	$("#lineitem-index-table").tablesorter({
+		theme: 'bootstrap',
+		initWidgets: true,
+		widgets: ['uitheme'],
+		widgetOptions: { uitheme: 'bootstrap' },
+		headerTemplate: '{content}{icon}',
+		sortList: [[0,0]]	// Default ascending sort on 'NAME' column
+	 });
 })
