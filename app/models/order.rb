@@ -1,6 +1,7 @@
 class Order < ActiveRecord::Base
 	belongs_to :customer
-	has_and_belongs_to_many :products
+	has_many :line_items
+	has_many :products, through: :line_items
 
 	# Validations
 	validates :description, presence: true, length: { maximum: 50 }
