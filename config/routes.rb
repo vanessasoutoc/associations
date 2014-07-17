@@ -1,12 +1,18 @@
 Associations::Application.routes.draw do
   root  'static_pages#about'
 
-	resources :customers do
-		resources :orders, shallow: true
+#	resources :customers do
+#		resources :orders, shallow: true
+#	end
+	resources :customers, shallow: true do
+		resources :orders do
+			resources :line_items
+		end
 	end
   resources :users
   resources :products
   resources :sessions, only: [:new, :create, :destroy]
+#	resources :line_items, only: [:new, :create, :edit, :update, :destroy]
 
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'

@@ -26,8 +26,11 @@
 	</div>
 </div>	<!-- .row -->
 <div class="row">
-	<div>
+	<div class="col-md-2">
 		<h2>Line Items</h2>
+	</div>
+	<div class="col-md-2">
+		<%= link_to "Add Line Item", new_order_line_item_path(@order), class: "btn btn-default" %> 
 	</div>
 </div>
 <table id="lineitem-index-table" class="tablesorter">
