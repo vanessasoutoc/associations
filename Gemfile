@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.1.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.2'
+gem 'rails', '4.1.4'
 
 # PostgreSQL
 gem 'pg', '~> 0.17.1'
@@ -56,6 +56,9 @@ end
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '3.1.2'
+
+# Extend ActiveRecord to support composite keys in join tables
+gem 'composite_primary_keys', '~> 7.0.4'
 
 # Use unicorn as the app server
 # gem 'unicorn'
