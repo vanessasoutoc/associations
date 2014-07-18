@@ -17,11 +17,7 @@ class OrdersController < ApplicationController
   	@customer = Customer.find(params[:customer_id])
     @order = Order.new(order_params)
     @order.customer_id = params[:customer_id]
-    # TODO: Save line items
 		if @order.save
-    # Temporary to avoid error
-			@order.line_items.create(order_id: @order.id, product_id: 1, quantity: 456, discount_percent: 15)
-
       flash[:success] = "Order created"
 			redirect_to @order
 		else
