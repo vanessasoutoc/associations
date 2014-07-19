@@ -39,7 +39,9 @@
 	    <th>NAME</th>
 	    <th>UPC</th>
 	    <th>QUANTITY</th>
-	    <th>PRICE</th>
+	    <th>UNIT PRICE</th>
+	    <th>DISCOUNT %</th>
+	    <th>TOTAL</th>
 	  </tr>
 	</thead>
 
@@ -51,7 +53,9 @@
 	    <td><%= line_item.product.name %></td>
 	    <td><%= line_item.product.upc %></td>
 	    <td><%= line_item.quantity %></td>
-	    <td><%= number_to_currency(line_item.price, unit: "") %></td>
+	    <td><%= number_to_currency(line_item.product.unit_price, unit: "") %></td>
+	    <td><%= line_item.discount_percent %></td>
+	    <td><%= number_to_currency(line_item.total, unit: "") %></td>
 	  </tr>
 	<% end %>
 	</tbody>

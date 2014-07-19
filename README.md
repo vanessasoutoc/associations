@@ -3,7 +3,7 @@ This application was developed as an opportunity to practice various aspects of 
 
 Functionality currently implemented:
 
-* CRUD processing for Customers, Orders, Products, and Users
+* CRUD processing for Customers, Orders, LineItems, Products, and Users
 * Authentication
 * Authorization - User management only accessible by Admin role
 * PostgreSQL database
