@@ -32,6 +32,11 @@ class LineItemsController < ApplicationController
   end
 
   def destroy
+  	@line_item = LineItem.find(composite_key)
+  	order_id = @line_item.order_id
+		@line_item.destroy
+		flash[:success] = "Line item deleted."
+    redirect_to order_path(order_id)
   end
 
 
