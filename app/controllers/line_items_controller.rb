@@ -18,9 +18,17 @@ class LineItemsController < ApplicationController
   end
 
   def edit
+  	@line_item = LineItem.find(composite_key)
   end
 
   def update
+  	@line_item = LineItem.find(composite_key)
+    if @line_item.update_attributes(line_item_params)
+      flash[:success] = "Line item updated"
+      redirect_to order_path(@line_item.order_id)
+    else
+      render "edit"
+    end
   end
 
   def destroy
@@ -30,5 +38,9 @@ class LineItemsController < ApplicationController
   private
   	def line_item_params
 			params.require(:line_item).permit(:product_id, :quantity, :discount_percent)
-  	end  
+  	end
+
+  	def composite_key
+	  	params[:id].split(',').map { |x| x.to_i }
+  	end
 end
