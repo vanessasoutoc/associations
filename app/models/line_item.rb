@@ -17,10 +17,6 @@ class LineItem < ActiveRecord::Base
 
 
   def total
-#  	discount_fraction = discount_percent / 100.0
-#  	logger.debug "Discount discount_percent: #{discount_percent}"
-#  	logger.debug "Discount fraction: #{discount_fraction}"
-
   	product.unit_price * quantity * (1 - (discount_percent / 100.0))
   end
 end
