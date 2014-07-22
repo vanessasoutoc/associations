@@ -9,11 +9,11 @@ $(document).ready(function() {
 		widgetOptions: { uitheme: 'bootstrap' },
 		headerTemplate: '{content}{icon}',
 		sortList: [[0,0]],	// Default ascending sort on 'NAME' column
-	    headers: {	// Disable sort on 'Detail', 'Edit' and 'Delete' columns
-	        2: { sorter: false },
-	        3: { sorter: false },
-	        4: { sorter: false }
-	    }
+    headers: {	// Disable sort on 'Detail', 'Edit' and 'Delete' columns
+        2: { sorter: false },
+        3: { sorter: false },
+        4: { sorter: false }
+    }
 	 });
 	
 	$("#user-index-table").tablesorter({
@@ -23,11 +23,11 @@ $(document).ready(function() {
 		widgetOptions: { uitheme: 'bootstrap' },
 		headerTemplate: '{content}{icon}',
 		sortList: [[0,0]],	// Default ascending sort on 'NAME' column
-	    headers: {	// Disable sort on 'Show', 'Edit' and 'Delete' columns
-	        2: { sorter: false },
-	        3: { sorter: false },
-	        4: { sorter: false }
-	    }
+    headers: {	// Disable sort on 'Show', 'Edit' and 'Delete' columns
+        2: { sorter: false },
+        3: { sorter: false },
+        4: { sorter: false }
+    }
 	 });
 	
 	$("#order-index-table").tablesorter({
@@ -37,11 +37,11 @@ $(document).ready(function() {
 		widgetOptions: { uitheme: 'bootstrap' },
 		headerTemplate: '{content}{icon}',
 		sortList: [[0,0]],	// Default ascending sort on 'NAME' column
-	    headers: {	// Disable sort on 'Show', 'Edit' and 'Delete' columns
-	        2: { sorter: false },
-	        3: { sorter: false },
-	        4: { sorter: false }
-	    }
+    headers: {	// Disable sort on 'Show', 'Edit' and 'Delete' columns
+        2: { sorter: false },
+        3: { sorter: false },
+        4: { sorter: false }
+    }
 	 });
 	
 	$("#product-index-table").tablesorter({
@@ -51,13 +51,13 @@ $(document).ready(function() {
 		widgetOptions: { uitheme: 'bootstrap' },
 		headerTemplate: '{content}{icon}',
 		sortList: [[0,0]],	// Default ascending sort on 'NAME' column
-	    headers: {	// Disable sort on 'Show', 'Edit' and 'Delete' columns
-	        1: { sorter: false },
-	        4: { sorter: false },
-	        5: { sorter: false },
-	        6: { sorter: false },
-	        7: { sorter: false }
-	    }
+    headers: {	// Disable sort on 'Show', 'Edit' and 'Delete' columns
+        1: { sorter: false },
+        4: { sorter: false },
+        5: { sorter: false },
+        6: { sorter: false },
+        7: { sorter: false }
+    }
 	 });
 	
 	$("#lineitem-index-table").tablesorter({
@@ -66,6 +66,10 @@ $(document).ready(function() {
 		widgets: ['uitheme'],
 		widgetOptions: { uitheme: 'bootstrap' },
 		headerTemplate: '{content}{icon}',
-		sortList: [[0,0]]	// Default ascending sort on 'NAME' column
+		sortList: [[0,0]],	// Default ascending sort on 'NAME' column
+    headers: {	// Disable sort on 'Edit' and 'Delete' columns
+        6: { sorter: false },
+        7: { sorter: false }
+    }
 	 });
 })
