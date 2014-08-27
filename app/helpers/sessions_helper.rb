@@ -19,10 +19,10 @@ module SessionsHelper
 		@current_user ||= User.find_by(persistent_session_token: persistent_session_token)
 	end
 
-  def sign_out
-    current_user.update_attribute(:persistent_session_token,
-                                  User.digest(User.new_persistent_session_token))
-    cookies.delete(:persistent_session_token)
-    self.current_user = nil
-  end
+	def sign_out
+		current_user.update_attribute(:persistent_session_token,
+																	User.digest(User.new_persistent_session_token))
+		cookies.delete(:persistent_session_token)
+		self.current_user = nil
+	end
 end

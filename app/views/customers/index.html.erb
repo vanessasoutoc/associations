@@ -4,25 +4,25 @@
 <br />
 <table id="customer-index-table" class="tablesorter">
 	<thead>
-	  <tr>
-	    <th>NAME</th>
-	    <th>EMAIL</th>
-	    <th></th>
-	    <th></th>
-	    <th></th>
-	  </tr>
+		<tr>
+			<th>NAME</th>
+			<th>EMAIL</th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
 	</thead>
 
 	<tbody>
 	<% @customers.each do |customer| %>
-	  <tr>
-	    <td><%= customer.name %></td>
-	    <td><%= customer.email %></td>
-	    <td><%= link_to "Customer Detail with Orders", customer %></td>
-	    <td><%= link_to "Edit", edit_customer_path(customer) %></td>
-	    <td><%= link_to "Delete", customer, method: :delete,
-	    	data: { confirm: "Delete this customer and associated orders?" } %></td>
-	  </tr>
+		<tr>
+			<td><%= customer.name %></td>
+			<td><%= customer.email %></td>
+			<td><%= link_to "Customer Detail with Orders", customer %></td>
+			<td><%= link_to "Edit", edit_customer_path(customer) %></td>
+			<td><%= link_to "Delete", customer, method: :delete,
+				data: { confirm: "Delete this customer and associated orders?" } %></td>
+		</tr>
 	<% end %>
 	</tbody>
 </table>

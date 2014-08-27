@@ -1,17 +1,17 @@
 <h1>Edit Order</h1>
 <%= form_for @order, html: {class: "form-horizontal"} do |f| %>
-  <%#= render "shared/error_messages", object: f.object %>
+	<%#= render "shared/error_messages", object: f.object %>
 
-  <div class="form-group">
-    <%=f.label :description, "DESCRIPTION", class: "col-md-2 control-label" %>
+	<div class="form-group">
+		<%=f.label :description, "DESCRIPTION", class: "col-md-2 control-label" %>
 		<div class="col-md-4">
 			<%= f.text_field :description, class: "form-control" %>
 		</div>
 		<%= render partial: "shared/validation_error_message_first",
 		 locals: { err_msgs: @order.errors[:description], attr_name: "Description" }%>		
-  </div>
-  <div class="form-group">
-    <%= f.label :date, "DATE", class: "col-md-2 control-label" %>
+	</div>
+	<div class="form-group">
+		<%= f.label :date, "DATE", class: "col-md-2 control-label" %>
 		<div class="col-md-2">
 			<%= f.text_field :date, id: "datepicker", class: "form-control", value: @order.date.strftime("%-m/%-d/%Y"),
 			readonly: true %>
@@ -21,9 +21,9 @@
 		<div class="col-md-2 control-label">
 			<div>(click date for calendar)</div>
 		</div>
-  </div>
+	</div>
 
-  <%= f.submit class: "btn btn-default" %>
+	<%= f.submit class: "btn btn-default" %>
 	 
 	<%= link_to "Back to Customer", customer_path(@order.customer_id), class: "btn btn-default" %>
 

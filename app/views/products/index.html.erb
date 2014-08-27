@@ -4,31 +4,31 @@
 <br />
 <table id="product-index-table" class="tablesorter">
 	<thead>
-	  <tr>
-	    <th>NAME</th>
-	    <th>DESCRIPTION</th>
-	    <th>UPC</th>
-	    <th>UNIT PRICE</th>
-	    <th>INVENTORY</th>
-	    <th></th>
-	    <th></th>
-	    <th></th>
-	  </tr>
+		<tr>
+			<th>NAME</th>
+			<th>DESCRIPTION</th>
+			<th>UPC</th>
+			<th>UNIT PRICE</th>
+			<th>INVENTORY</th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
 	</thead>
 
 	<tbody>
 	<% @products.each do |product| %>
-	  <tr>
-	    <td><%= product.name %></td>
-	    <td><%= product.description %></td>
-	    <td><%= product.upc %></td>
-	    <td><%= number_to_currency(product.unit_price, unit: "") %></td>
-	    <td><%= product.inventory_qty %></td>
-	    <td><%= link_to "Detail", product %></td>
-	    <td><%= link_to "Edit", edit_product_path(product) %></td>
-	    <td><%= link_to "Delete", product, method: :delete,
-	    	data: { confirm: "Delete this product and associated order line items?" } %></td>
-	  </tr>
+		<tr>
+			<td><%= product.name %></td>
+			<td><%= product.description %></td>
+			<td><%= product.upc %></td>
+			<td><%= number_to_currency(product.unit_price, unit: "") %></td>
+			<td><%= product.inventory_qty %></td>
+			<td><%= link_to "Detail", product %></td>
+			<td><%= link_to "Edit", edit_product_path(product) %></td>
+			<td><%= link_to "Delete", product, method: :delete,
+				data: { confirm: "Delete this product and associated order line items?" } %></td>
+		</tr>
 	<% end %>
 	</tbody>
 </table>

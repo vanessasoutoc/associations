@@ -10,9 +10,9 @@
 	<li>jQuery 'tablesorter' and 'datepicker'</li>
 </ul>
 <p>
-  <% if signed_in? %>
-  	<h3>Please select a menu option above.</h3>
-  <% else %>
-      <%= link_to "Sign In", signin_path, class: "btn btn-default"  %>
-  <% end %>
+	<% if signed_in? %>
+		<h3>Please select a menu option above.</h3>
+	<% else %>
+			<%= link_to "Sign In", signin_path, class: "btn btn-default"  %>
+	<% end %>
 </p>

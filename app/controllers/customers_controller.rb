@@ -1,47 +1,47 @@
 class CustomersController < ApplicationController
-  before_action :signed_in_user
-  
-  def index
+	before_action :signed_in_user
+	
+	def index
 		@customers = Customer.all
-  end
+	end
 
-  def show
+	def show
 		@customer = Customer.find(params[:id])
-  end
+	end
 
-  def new
+	def new
 		@customer = Customer.new
-  end
+	end
 
-  def create
-    @customer = Customer.new(customer_params)
+	def create
+		@customer = Customer.new(customer_params)
 		if @customer.save
-      flash[:success] = "Customer created"
+			flash[:success] = "Customer created"
 			redirect_to @customer
 		else
 			render "new"
 		end
-  end
+	end
 
-  def edit
+	def edit
 		@customer = Customer.find(params[:id])
-  end
+	end
 
-  def update
+	def update
 		@customer = Customer.find(params[:id])
-    if @customer.update_attributes(customer_params)
-      flash[:success] = "Customer updated"
-      redirect_to @customer
-    else
-      render "edit"
-    end
-  end
+		if @customer.update_attributes(customer_params)
+			flash[:success] = "Customer updated"
+			redirect_to @customer
+		else
+			render "edit"
+		end
+	end
 
-  def destroy
+	def destroy
 		Customer.find(params[:id]).destroy
 		flash[:success] = "Customer deleted."
 		redirect_to customers_path
-  end
+	end
 	
 	private
 		def customer_params
