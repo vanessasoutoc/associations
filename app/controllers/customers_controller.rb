@@ -1,6 +1,4 @@
 class CustomersController < ApplicationController
-	before_action :signed_in_user
-	
 	def index
 		@customers = Customer.all
 	end

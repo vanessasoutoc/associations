@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-		before_action :signed_in_user, only: :destroy
+		#before_action :signed_in_user, only: :destroy
+		skip_before_action :signed_in_user, only: [:new, :create]
 
 		def new
 				if signed_in?
