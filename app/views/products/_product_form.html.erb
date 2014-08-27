@@ -1,35 +1,44 @@
 <%= form_for @product, html: {class: "form-horizontal"} do |f| %>
-  <%= render "shared/error_messages", object: f.object %>
 
   <div class="form-group">
     <%=f.label :name, "NAME", class: "col-md-2 control-label" %>
 		<div class="col-md-4">
 			<%= f.text_field :name, class: "form-control" %>
 		</div>
+		<%= render partial: "shared/validation_error_message_first",
+		 locals: { err_msgs: @product.errors[:name], attr_name: "Name" }%>
   </div>
   <div class="form-group">
     <%=f.label :description, "DESCRIPTION", class: "col-md-2 control-label" %>
 		<div class="col-md-4">
 			<%= f.text_field :description, class: "form-control" %>
 		</div>
+		<%= render partial: "shared/validation_error_message_first",
+		 locals: { err_msgs: @product.errors[:description], attr_name: "Description" }%>
   </div>
   <div class="form-group">
     <%=f.label :upc, "UPC", class: "col-md-2 control-label" %>
 		<div class="col-md-4">
 			<%= f.text_field :upc, class: "form-control" %>
 		</div>
+		<%= render partial: "shared/validation_error_message_first",
+		 locals: { err_msgs: @product.errors[:upc], attr_name: "UPC" }%>
   </div>
   <div class="form-group">
     <%= f.label :unit_price, "UNIT PRICE", class: "col-md-2 control-label" %>
 		<div class="col-md-4">
 			<%= f.text_field :unit_price, class: "form-control" %>
 		</div>
+		<%= render partial: "shared/validation_error_message_first",
+		 locals: { err_msgs: @product.errors[:unit_price], attr_name: "Unit Price" }%>
   </div>
   <div class="form-group">
     <%= f.label :inventory_qty, "INVENTORY QUANTITY", class: "col-md-2 control-label" %>
 		<div class="col-md-4">
 			<%= f.text_field :inventory_qty, class: "form-control" %>
 		</div>
+		<%= render partial: "shared/validation_error_message_first",
+		 locals: { err_msgs: @product.errors[:inventory_qty], attr_name: "Inventory Qty" }%>
   </div>
 
   <%= f.submit class: "btn btn-default" %>

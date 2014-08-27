@@ -1,0 +1,7 @@
+<% if !err_msgs.empty? %>
+	<div class="col-md-4">
+		<div id="validation_error_explanation">
+				* <%= attr_name + ' ' + err_msgs[0] %>
+		</div>
+	</div>
+<% end %>

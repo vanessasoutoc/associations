@@ -36,6 +36,15 @@ body {
   }
 }
 
+#validation_error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
 /* Lists */
 .icon-list li {
 	padding: 0 0 5px 20px;
