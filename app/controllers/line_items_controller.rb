@@ -1,4 +1,6 @@
 class LineItemsController < ApplicationController
+	before_action :signed_in_user
+	
 	def new
 		@order = Order.find(params[:order_id])
 		@line_item = LineItem.new
