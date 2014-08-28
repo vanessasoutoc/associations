@@ -12,13 +12,12 @@ Associations::Application.routes.draw do
   resources :users
   resources :products
   resources :sessions, only: [:new, :create, :destroy]
-#	resources :line_items, only: [:new, :create, :edit, :update, :destroy]
 
-  match '/signin',  to: 'sessions#new',         via: 'get'
-  match '/signout', to: 'sessions#destroy',     via: 'delete'
+  get '/signin' => 'sessions#new'
+  delete '/signout' => 'sessions#destroy'
 
-  match '/contact', to: 'static_pages#contact', via: 'get'  
-  match '/about',   to: 'static_pages#about',   via: 'get'  
+  get '/contact' => 'static_pages#contact'
+  get '/about' => 'static_pages#about'
 
   # NOTE: This block began causing an error after I added code to the 'SessionsHelper' module
   # and included it in 'ApplicationController'
