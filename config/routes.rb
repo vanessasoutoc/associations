@@ -6,7 +6,7 @@ Associations::Application.routes.draw do
 #	end
 	resources :customers, shallow: true do
 		resources :orders do
-			resources :line_items
+			resources :line_items, only: [:new, :create, :edit, :update, :destroy]
 		end
 	end
   resources :users
