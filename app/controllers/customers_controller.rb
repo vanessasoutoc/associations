@@ -1,10 +1,11 @@
 class CustomersController < ApplicationController
+	before_action :find_customer, only: [:show, :edit, :update]
+
 	def index
 		@customers = Customer.all
 	end
 
 	def show
-		@customer = Customer.find(params[:id])
 	end
 
 	def new
@@ -22,11 +23,9 @@ class CustomersController < ApplicationController
 	end
 
 	def edit
-		@customer = Customer.find(params[:id])
 	end
 
 	def update
-		@customer = Customer.find(params[:id])
 		if @customer.update_attributes(customer_params)
 			flash[:success] = "Customer updated"
 			redirect_to @customer
@@ -44,5 +43,9 @@ class CustomersController < ApplicationController
 	private
 		def customer_params
 			params.require(:customer).permit(:name, :street, :city, :state, :zipcode, :home_phone, :work_phone, :email)
+		end
+
+		def find_customer
+			@customer = Customer.find(params[:id])
 		end
 end
