@@ -41,10 +41,10 @@
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
-					<li class="<%= 'active' if params[:controller] == 'static_pages' && params[:action] == 'about' %>">
+					<li class="<%= 'active' if params[:controller] == 'static_pages' && params[:action] == 'show' && params[:id] == 'about' %>">
 						<%= link_to "About", about_path %>
 					</li>
-					<li class="<%= 'active' if params[:controller] == 'static_pages' && params[:action] == 'contact' %>">
+					<li class="<%= 'active' if params[:controller] == 'static_pages' && params[:action] == 'show' && params[:id] == 'contact' %>">
 						<%= link_to "Contact", contact_path %>
 					</li>
 

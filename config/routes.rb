@@ -16,8 +16,8 @@ Associations::Application.routes.draw do
   get '/signin' => 'sessions#new'
   delete '/signout' => 'sessions#destroy'
 
-  get '/contact' => 'static_pages#contact'
-  get '/about' => 'static_pages#about'
+  get '/about', to: 'static_pages#show', id: 'about'
+  get '/contact', to: 'static_pages#show', id: 'contact'
 
   # NOTE: This block began causing an error after I added code to the 'SessionsHelper' module
   # and included it in 'ApplicationController'
