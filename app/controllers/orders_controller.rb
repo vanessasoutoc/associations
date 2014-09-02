@@ -1,20 +1,18 @@
 class OrdersController < ApplicationController
+	before_action :find_order, only: [:show, :edit, :update, :destroy]
+	before_action :find_customer, only: [:new, :create]
+
 	def index
 	end
 
 	def show
-		@order = Order.find(params[:id])
 	end
 
 	def new
-		@customer = Customer.find(params[:customer_id])
 		@order = Order.new
 	end
 
 	def create
-		@customer = Customer.find(params[:customer_id])
-		#@order = Order.new(order_params)
-		#@order.customer_id = params[:customer_id]
 		@order = @customer.orders.build(order_params)
 		if @order.save
 			flash[:success] = "Order created"
@@ -25,11 +23,9 @@ class OrdersController < ApplicationController
 	end
 
 	def edit
-		@order = Order.find(params[:id])
 	end
 
 	def update
-		@order = Order.find(params[:id])
 		if @order.update_attributes(order_params)
 			flash[:success] = "Order updated"
 			redirect_to @order
@@ -39,7 +35,6 @@ class OrdersController < ApplicationController
 	end
 
 	def destroy
-		@order = Order.find(params[:id])
 		@customer = Customer.find(@order.customer_id)
 		@order.destroy
 		flash[:success] = "Order deleted."
@@ -53,6 +48,14 @@ class OrdersController < ApplicationController
 				params[:order][:date] = DateTime.strptime(params[:order][:date], "%m/%d/%Y").strftime("%Y-%m-%d")
 			end
 			params.require(:order).permit(:description, :date, :total)
+		end
+
+		def find_customer
+			@customer = Customer.find(params[:customer_id])
+		end
+
+		def find_order
+			@order = Order.find(params[:id])
 		end
 
 end
