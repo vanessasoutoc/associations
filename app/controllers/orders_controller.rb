@@ -13,8 +13,9 @@ class OrdersController < ApplicationController
 
 	def create
 		@customer = Customer.find(params[:customer_id])
-		@order = Order.new(order_params)
-		@order.customer_id = params[:customer_id]
+		#@order = Order.new(order_params)
+		#@order.customer_id = params[:customer_id]
+		@order = @customer.orders.build(order_params)
 		if @order.save
 			flash[:success] = "Order created"
 			redirect_to @order
