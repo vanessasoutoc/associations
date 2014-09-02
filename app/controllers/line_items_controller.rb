@@ -6,9 +6,10 @@ class LineItemsController < ApplicationController
 
 	def create
 		@order = Order.find(params[:order_id])
-		@line_item = LineItem.new(line_item_params)
-		@line_item.order_id = params[:order_id]
-		@line_item.product_id = params[:line_item][:product_id]
+		#@line_item = LineItem.new(line_item_params)
+		#@line_item.order_id = params[:order_id]
+		#@line_item.product_id = params[:line_item][:product_id]
+		@line_item = @order.line_items.build(line_item_params)	# Scoped builder recommended by Patrick
 		if @line_item.save
 			flash[:success] = "Line Item created"
 			redirect_to @order
