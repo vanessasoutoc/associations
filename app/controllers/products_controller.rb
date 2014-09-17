@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
+	helper_method :sort_column, :sort_direction
+
 	def index
-		@products = Product.all
+		@products = Product.order(sort_column + " " + sort_direction)
 	end
 
 	def show
@@ -44,5 +46,13 @@ class ProductsController < ApplicationController
 	private
 		def product_params
 			params.require(:product).permit(:name, :description, :upc, :unit_price, :inventory_qty)
+		end
+
+		def sort_column
+			%w[name upc].include?(params[:sort]) ? params[:sort] : "name"
+		end
+
+		def sort_direction
+			%w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
 		end
 end
