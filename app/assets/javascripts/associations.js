@@ -61,18 +61,6 @@ $(document).ready(function() {
     }
 	 });
 */
-	if ( $("a.current").hasClass("asc")) {
-		$("span.chevron").addClass("glyphicon glyphicon-chevron-up");
-	}
-	else if ( $("a.current").hasClass("desc")) {
-		$("span.chevron").addClass("glyphicon glyphicon-chevron-down");
-	}
-
-	if ( !$("a.current").hasClass("asc") && !$("a.current").hasClass("desc") ) {
-		$("span.chevron").removeClass("glyphicon");		
-		$("span.chevron").removeClass("glyphicon-chevron-up");		
-		$("span.chevron").removeClass("glyphicon-chevron-down");		
-	}
 
 	$("#lineitem-index-table").tablesorter({
 		theme: 'bootstrap',
