@@ -2,13 +2,16 @@
 <%= link_to "Add Product", new_product_path, class: "btn btn-default valign_middle" %>
 <br />
 <br />
-<!--<table id="product-index-table" class="tablesorter">-->
-	<table id="" class="table table-bordered">
+	<table id="product-index-table" class="tablesorter">
+	<!-- Commented tags part of Product table sort implementation -->
+	<!--<table id="" class="table table-bordered">-->
 	<thead>
 		<tr>
-			<th><%= sortable "name" %></th>
+			<th>NAME</th>
+			<!--<th><%#= sortable "name" %></th>-->
 			<th>DESCRIPTION</th>
-			<th><%= sortable "upc" %></th>
+			<th>UPC</th>
+			<!--<th><%#= sortable "upc" %></th>-->
 			<th>UNIT PRICE</th>
 			<th>INVENTORY</th>
 			<th></th>

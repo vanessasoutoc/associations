@@ -1,4 +1,5 @@
 module ApplicationHelper
+	# Product view table sorting implementation
 	def sortable(column, title = nil)
 		title ||= column.upcase
 		link_class = column == sort_column ? "current #{sort_direction}" : nil
@@ -18,6 +19,7 @@ module ApplicationHelper
 		end
 	end
 
+	# Used to populate state select control in Customer add and edit form
 	def us_states
 			[
 				['Alabama', 'Alabama'],
