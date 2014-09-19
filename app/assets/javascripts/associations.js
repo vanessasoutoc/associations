@@ -43,8 +43,7 @@ $(document).ready(function() {
         4: { sorter: false }
     }
 	 });
-
-/*	
+	
 	$("#product-index-table").tablesorter({
 		theme: 'bootstrap',
 		initWidgets: true,
@@ -60,8 +59,7 @@ $(document).ready(function() {
         7: { sorter: false }
     }
 	 });
-*/
-
+	
 	$("#lineitem-index-table").tablesorter({
 		theme: 'bootstrap',
 		initWidgets: true,
