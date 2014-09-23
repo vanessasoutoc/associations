@@ -1,7 +1,29 @@
 <h1>Customers</h1>
-<%= link_to "Add Customer", new_customer_path, class: "btn btn-default valign_middle" %>
-<br />
-<br />
+
+<div class="row">
+  <div class="col-md-2">
+		<%= link_to "Add Customer", new_customer_path, class: "btn btn-default valign_middle" %>
+  </div>
+  <div class="col-md-3">
+		<!-- pager -->
+		<div id="customer-pager" class="pager customer-pager">
+		  <form>
+		    <%= image_tag("first.png", class: "first") %>
+		    <%= image_tag("prev.png", class: "prev") %>
+		    <span class="pagedisplay"></span> <!-- this can be any element, including an input -->
+		    <%= image_tag("next.png", class: "next") %>
+		    <%= image_tag("last.png", class: "last") %>
+		    <select class="pagesize">
+		      <option value="10">10</option>
+		      <option value="20">20</option>
+		      <option value="30">30</option>
+		      <option value="40">40</option>
+		    </select>
+		  </form>
+		</div>
+  </div>
+</div>
+
 <table id="customer-index-table" class="tablesorter">
 	<thead>
 		<tr>
