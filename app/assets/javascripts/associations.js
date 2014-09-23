@@ -14,7 +14,10 @@ $(document).ready(function() {
 				3: { sorter: false },
 				4: { sorter: false }
 		}
-	});
+	})
+	.tablesorterPager({
+		container: $("#customer-pager")}
+	);
 	
 	$("#user-index-table").tablesorter({
 		theme: 'bootstrap',
@@ -61,7 +64,7 @@ $(document).ready(function() {
 		}
 	})
 	.tablesorterPager({
-		container: $("#pager")}
+		container: $("#product-pager")}
 	);
 	
 	$("#lineitem-index-table").tablesorter({
