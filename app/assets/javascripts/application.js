@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require bootstrap/dropdown
 //= require jquery-tablesorter
+//= require jquery-tablesorter/addons/pager/jquery.tablesorter.pager
 //= require jquery.ui.datepicker
 //= require turbolinks
 //= require_tree .
