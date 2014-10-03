@@ -1,7 +1,10 @@
 module SessionsHelper
 	def sign_in(user)
 		persistent_session_token = User.new_persistent_session_token
-		cookies.permanent[:persistent_session_token] = persistent_session_token
+# NOTE: Using temporary cookie to end session when browser closed
+# To persist session, comment temporary cookie and uncomment permanent cookie
+		cookies[:persistent_session_token] = persistent_session_token
+#		cookies.permanent[:persistent_session_token] = persistent_session_token
 		user.update_attribute(:persistent_session_token, User.digest(persistent_session_token))
 		self.current_user = user
 	end
