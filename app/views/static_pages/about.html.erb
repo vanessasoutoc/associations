@@ -1,19 +1,36 @@
-<h1>Customer Orders App</h1>
-<p>This application was developed as an opportunity to practice various aspects of Ruby on Rails programming.</p>
-<p>Functionality currently implemented:</p>
-<ul class="list-unstyled icon-list chevron-right">
-	<li>CRUD processing for Customers, Orders, LineItems, Products, and Users</li>
-	<li>Authentication</li>
-	<li>Authorization - User management only accessible by Admin role</li>
-	<li>PostgreSQL database</li>
-	<li>Bootstrap UI</li>
-	<li>jQuery 'tablesorter' with 'pager'</li>
-	<li>jQuery 'datepicker'</li>
-</ul>
-<p>
-	<% if signed_in? %>
-		<h3>Please select a menu option above.</h3>
-	<% else %>
-			<%= link_to "Sign In", signin_path, class: "btn btn-default"  %>
-	<% end %>
-</p>
+<div class="row">
+	<div class="col-md-7 contact-border">
+		<h2>Customer Orders App</h2>
+		<p>This application was developed as an opportunity to practice various aspects of Ruby on Rails programming.</p>
+		<p>Functionality currently implemented:</p>
+		<ul class="list-unstyled icon-list chevron-right">
+			<li>CRUD processing for Customers, Orders, LineItems, Products, and Users</li>
+			<li>Authentication</li>
+			<li>Authorization - User management only accessible by Admin role</li>
+			<li>PostgreSQL database</li>
+			<li>Bootstrap UI</li>
+			<li>jQuery 'tablesorter' with 'pager'</li>
+			<li>jQuery 'datepicker'</li>
+		</ul>
+		<p>
+			<% if signed_in? %>
+				<h3>Please select a menu option above.</h3>
+			<% else %>
+					<%= link_to "Sign In", signin_path, class: "btn btn-default"  %>
+			<% end %>
+		</p>
+	</div><!-- .col -->
+
+	<div class="col-md-5">
+		<h2>Contact Developer</h2>
+	  <%= image_tag("tim_cubicle.jpg", alt: "Tim Coveney") %>
+		<br />
+			<span style="font-size: 1.5em;">Tim Coveney</span>
+			<br />
+			<span>tcemp@comcast.net</span>
+			<br />
+			<%= link_to "Application GitHub Repository", "https://github.com/UniquelySimilar/associations",
+			 target: "_blank", class: "btn btn-default" %>
+	</div>
+
+</div><!-- .row -->

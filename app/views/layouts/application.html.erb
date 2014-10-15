@@ -20,7 +20,6 @@
 					<span class="icon-bar"></span>
 				</button>
 				<span class="navbar-brand">Customer Orders App</span>
-				<%#= link_to "Associations", root_path, class: "navbar-brand" %>
 			</div>
 
 			<div class="navbar-collapse collapse">
@@ -44,9 +43,11 @@
 					<li class="<%= 'active' if params[:controller] == 'static_pages' && params[:action] == 'show' && params[:id] == 'about' %>">
 						<%= link_to "About", about_path %>
 					</li>
-					<li class="<%= 'active' if params[:controller] == 'static_pages' && params[:action] == 'show' && params[:id] == 'contact' %>">
-						<%= link_to "Contact", contact_path %>
+					<!--
+					<li class="<%#= 'active' if params[:controller] == 'static_pages' && params[:action] == 'show' && params[:id] == 'contact' %>">
+						<%#= link_to "Contact", contact_path %>
 					</li>
+				-->
 
 					<% if signed_in? %>
 						<li class="dropdown">
