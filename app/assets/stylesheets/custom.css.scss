@@ -78,6 +78,16 @@ body {
 	border-right: 1px solid;
 }
 
+.contact-info a:link,
+.contact-info a:visited,
+.contact-info a:hover,
+.contact-info a:focus,
+.contact-info a:active
+{
+	color: #000000;
+	text-decoration: underline;
+}
+
 .debug_dump {
   clear: both;
   float: left;
