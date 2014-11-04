@@ -10,4 +10,8 @@ class Customer < ActiveRecord::Base
 	validates_format_of :home_phone, with: /\d{3}-\d{3}-\d{4}/
 	validates_format_of :work_phone, with: /\d{3}-\d{3}-\d{4}/, allow_blank: true
 	validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+
+ def self.search(query)
+        where("name like ?", "%#{query}%") 
+    end
 end

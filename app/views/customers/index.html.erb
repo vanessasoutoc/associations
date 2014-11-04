@@ -22,6 +22,15 @@
 		  </form>
 		</div>
   </div>
+
+<div class="col-md-4">
+      <%= form_tag(customers_path, :method => "get", :class => "form-inline pull-right", id: "search-form", style: "margin-right: 2%") do %>
+	<%= text_field_tag :search, params[:search], placeholder: "Search Customer", class: "form-control" %>
+	<%= button_tag " ", :name => nil, class: "btn btn-default glyphicon glyphicon-search" %>
+	<% end %>
+
+  </div>
+
 </div>
 
 <table id="customer-index-table" class="tablesorter">

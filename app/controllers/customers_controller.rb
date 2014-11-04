@@ -2,7 +2,11 @@ class CustomersController < ApplicationController
 	before_action :find_customer, only: [:show, :edit, :update]
 
 	def index
-		@customers = Customer.all
+		if params[:search]
+            @customers = Customer.search(params[:search]).order("name ASC")
+        else
+            @customers = Customer.all
+        end
 	end
 
 	def show
